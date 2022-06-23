@@ -7,5 +7,6 @@ router
     .get('/api/v1/user', UserController.listarUsuario)
     .get('/api/v1/user/:id', UserController.listarUsuarioPorId)
     .post('/api/v1/user', UserController.cadastrarUsuario)
+    .put('/api/v1/user/:id', UserController.atualizarUsuario)
 
 export default router;

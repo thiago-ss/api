@@ -32,6 +32,18 @@ class UserController {
             }
         });
     }
+
+    static atualizarUsuario = (req, res) => {
+        const id = req.params.id;
+
+        user.findByIdAndUpdate(id, {$set: req.body}, err => {
+            if(err) {
+                res.status(500).send({message: `Erro ao atualizar usuário - ${err.message}`});
+            } else {
+                res.status(200).send({message: 'Usuário atualizado com sucesso'});
+            }
+        });
+    }
 }
 
 export default UserController;
