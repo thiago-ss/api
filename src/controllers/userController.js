@@ -2,9 +2,11 @@ import user from '../models/User.js';
 
 class UserController {
     static listarUsuario = (req, res) => {
-        user.find((err, user) => {
+        user.find()
+        .populate('task')
+        .exec((err, user) => {
             res.status(200).json(user)
-        });
+        });  
     }
 
     static listarUsuarioPorId = (req, res) => {
