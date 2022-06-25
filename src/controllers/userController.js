@@ -64,6 +64,8 @@ class UserController {
       return res
         .status(400)
         .json({ message: 'A senha precisa ter no mínimo 6 dígitos' })
+    } else if (!Validator.checkEmail(email)) {
+      return res.status(400).json({ message: 'O e-mail está inválido' })
     }
 
     let userr = new user(req.body)
