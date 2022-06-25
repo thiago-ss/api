@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API RestFull</title>
+</head>
+
+<body>
+    <main class="container">
+        <section class="form__container">
+            <h1>Cadastro de Usuario</h1>
+            <form>
+                <fieldset>
+                    <legend>Informações Pessoais</legend>
+                <div><label for="Nome">Nome * <input type="text" name="Nome" placeholder="João Silva" required></label></div>
+                <div><label for="Cpf">Cpf * <input type="number" name="Cpf" placeholder="908.415.400-20" required></label></div>
+                <div><label for="dtNasc">Data Nasc * <input type="date" name="dtNasc" placeholder="01/01/2000" required></label></div>
+            </fieldset>
+            <fieldset>
+                <div>E-mail * <label for="email"><input type="email" name="email" placeholder="joao.silva@compasso.com" required></label></div>
+                <div><label for="Senha">Senha * <input type="password" name="Senha" placeholder="******" required></label></div>
+                <div><label for="Endereco">Endereço * <input type="text" name="Endereco" placeholder="Rua America" required></label></div>
+            </fieldset>
+            <fieldset>
+                <div><label for="Numero">Número ° <input type="number" name="Numero" placeholder="1115" required></label></div>
+                <div><label for="Complemento">Complemento <input type="text" name="Complemento" placeholder="Casa B"></label></div>
+                <div><label for="Cidade">Cidade * <input type="text" name="Cidade" placeholder="São Paulo" required></label></div>
+            </fieldset>
+            <fieldset>
+                <div><label for="Estado">Estado * <input type="text" name="Estado" placeholder="São Paulo" required></label></div>
+                <div><label for="Pais">País * <input type="text" name="Pais" placeholder="Brasil" required></label></div>
+                <div><label for="codPostal">Código Postal * <input type="number" name="codPostal" placeholder="93950-000" required></label></div>
+            </fieldset>
+            <fieldset>
+                <legend>Tarefa</legend>
+                <div><label for="Descricao">Descrição * <input type="text" name="Descricao" placeholder="Teste" required></label></div>
+                <div><label for="Data">Data<input type="date"></label></div>
+            </fieldset>
+            <div>
+                <button type="submit">Cadastrar</button>
+            </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
