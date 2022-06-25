@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema(
     {
-        id: {type: String},
+        // id: {type: String},
         name: {type: String, required: true},
         cpf: {type: String, required: true},
         birthDate: {type: String, required: true},
@@ -15,6 +15,9 @@ const userSchema = new mongoose.Schema(
         state: {type: String, required: true},
         country: {type: String, required: true},
         zipCode: {type: String, required: true},
+    },
+    {
+        timestamps: true
     }
 );
 
