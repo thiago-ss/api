@@ -60,6 +60,10 @@ class UserController {
 
     if (!Validator.validCpf(cpf)) {
       return res.status(400).json({ message: 'CPF é inválido.' })
+    } else if (password.length < 6) {
+      return res
+        .status(400)
+        .json({ message: 'A senha precisa ter no mínimo 6 dígitos' })
     }
 
     let userr = new user(req.body)
