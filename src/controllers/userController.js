@@ -3,14 +3,28 @@ import user from '../models/User.js'
 
 class UserController {
   static listarUsuario = (req, res) => {
-    user.find((err, user) => {
-      res.status(200).json(user)
-    })
+    const page = req.query.page || 1
+    const perPage = 2
+    user
+      .find()
+      .skip(page * perPage - perPage)
+      .limit(perPage)
+      .exec(function (err, users) {
+        user.count().exec(function (err, count) {
+          res.set({ 'Access-Control-Allow-Origin': '*' })
+          res.status(200).send({
+            users: users,
+            page: page,
+            pages: Math.ceil(count / perPage),
+            totalRecords: count,
+          })
+        })
+      })
   }
 
   static listarUsuarioPorId = (req, res) => {
     const id = req.params.id
-
+    res.set({ 'Access-Control-Allow-Origin': '*' })
     user
       .findById({ _id: id })
       .populate('name')
@@ -70,6 +84,8 @@ class UserController {
 
     let userr = new user(req.body)
 
+    res.set({ 'Access-Control-Allow-Origin': '*' })
+
     userr.save((err) => {
       if (err) {
         res
@@ -83,6 +99,7 @@ class UserController {
 
   static atualizarUsuario = (req, res) => {
     const id = req.params.id
+    res.set({ 'Access-Control-Allow-Origin': '*' })
 
     user.findByIdAndUpdate({ _id: id }, { $set: req.body }, (err) => {
       if (err) {
@@ -97,6 +114,7 @@ class UserController {
 
   static deletarUsuario = (req, res) => {
     const id = req.params.id
+    res.set({ 'Access-Control-Allow-Origin': '*' })
 
     user.findByIdAndDelete({ _id: id }, (err) => {
       if (err) {
