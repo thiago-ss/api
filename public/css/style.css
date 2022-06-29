@@ -1,0 +1,38 @@
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    background-color:azure;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.input input {
+    width: 150px;
+    margin-left: 15px;
+    background-color: cadetblue;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 30px;
+    margin-top: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.button button {
+    cursor: pointer;
+    background-color: cadetblue;
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 10px;
+}

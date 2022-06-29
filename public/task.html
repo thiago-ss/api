@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>User</title>
+  </head>
+  <body>
+    <a href="user.html">User</a>
+    <br />
+    <center>
+      <h1>Cadastrar, atualizar ou deletar Task</h1>
+    </center>
+    <div class="inputs">
+      <div class="input">
+        <label for="description">Descrição</label>
+        <input type="text" id="description" required />
+      </div>
+      <div class="input">
+        <label for="date">Data</label>
+        <input type="date" id="date" required />
+      </div>
+      <div class="input">
+        <label for="user">ID do usuário</label>
+        <input type="text" id="user" required />
+      </div>
+    </div>
+    <div class="buttons">
+      <div class="button">
+        <button>Cadastrar</button>
+      </div>
+      <div class="button">
+        <button>Atualizar</button>
+      </div>
+      <div class="button">
+        <button>Deletar</button>
+      </div>
+    </div>
+    <center style="margin-top: 150px">
+      <h1>Visualizar Task</h1>
+      <div class="inputs">
+        <div class="input">
+          <label for="idSearch">ID do usuário</label>
+          <input type="text" id="idSearch" />
+        </div>
+        <div class="input">
+          <label for="pageSarch">Página</label>
+          <input type="text" id="pageSarch" />
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="button">
+          <button>Visualizar JSON (console)</button>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>
