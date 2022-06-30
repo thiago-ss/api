@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>User</title>
+</head>
+
+<body>
+  <a href="user.html">User</a>
+  <br />
+  <center>
+    <h1>Cadastrar, atualizar ou deletar Task</h1>
+  </center>
+  <form id="form">
+    <div class="inputs">
+      <div class="input">
+        <label for="description">Descrição *</label>
+        <input type="text" id="description" required />
+      </div>
+      <div class="input">
+        <label for="date">Data *</label>
+        <input type="date" id="date" required />
+      </div>
+      <div class="input">
+        <label for="user">ID do usuário *</label>
+        <input type="text" id="user" required />
+      </div>
+      <div class="input">
+        <label for="idTaskSearch">ID da task</label>
+        <input type="text" id="idTaskSearch" />
+      </div>
+    </div>
+    <div class="buttons">
+      <div class="button">
+        <button id="register-task-button" type="submit">Cadastrar</button>
+      </div>
+      <div class="button">
+        <button id="update-task-button" type="submit">Atualizar</button>
+      </div>
+    </div>
+  </form>
+  <center style="margin-top: 150px">
+    <h1>Visualizar Task</h1>
+    <div class="inputs">
+      <div class="input">
+        <label for="idTaskSearch-2">ID da task</label>
+        <input type="text" id="idTaskSearch-2" />
+      </div>
+      <div class="input">
+        <label for="pageSearch">Página</label>
+        <input type="text" id="pageSearch" />
+      </div>
+    </div>
+    <div class="buttons">
+      <div class="button">
+        <button id="get-task-button" type="submit">Visualizar JSON (console)</button>
+      </div>
+      <div class="button">
+        <button id="delete-task-button" type="submit">Deletar</button>
+      </div>
+    </div>
+  </center>
+  <script type="module" src="js/task/createTask.js"></script>
+  <script type="module" src="js/task/getTask.js"></script>
+  <script type="module" src="js/task/updateTask.js"></script>
+  <script>
+    const form = document.getElementById('form')
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault()
+    });
+  </script>
+</body>
+
+</html>
