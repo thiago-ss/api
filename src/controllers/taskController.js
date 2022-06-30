@@ -2,8 +2,12 @@ import task from '../models/Task.js';
 
 class TaskController {
     static listarTask = (req, res) => {
-        task.find()
-        .populate('user')
+        const page = req.query.page || 1
+        const perPage = 1
+        task
+        .find()
+        .skip((page * perPage) - perPage)
+        .limit(perPage)
         .exec((err, task) => {
             if(err) {
                 res.status(400).send({message: `Não foi possível encontrar task - ${err.message}`})

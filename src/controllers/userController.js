@@ -4,10 +4,10 @@ import user from '../models/User.js'
 class UserController {
   static listarUsuario = (req, res) => {
     const page = req.query.page || 1
-    const perPage = 2
+    const perPage = 1
     user
       .find()
-      .skip(page * perPage - perPage)
+      .skip((page * perPage) - perPage)
       .limit(perPage)
       .exec(function (err, users) {
         user.count().exec(function (err, count) {

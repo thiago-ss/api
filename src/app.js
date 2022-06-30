@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url'
 import { dirname } from 'path'
 import db from './config/dbConnect.js'
 import routes from './routes/index.js'
+import cors from 'cors';
 
 db.on('error', console.log.bind(console, 'Erro de conexao'))
 db.once('open', () => {
@@ -16,6 +17,8 @@ app.use(express.json())
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 app.use('/', express.static(resolve(__dirname, '..', 'public')))
+
+app.use(cors());
 
 routes(app)
 export default app
